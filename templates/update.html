@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center"> Update Expense</h1>
+
+    <div class="form">
+        <form action="/update/{{expense.id}}" method="POST">
+            <input type="text" name="name" id="name" value="{{expense.name}}">
+            <input type="text" name="description" id="description" value="{{expense.description}}">
+            <input type="text" name="category" id="category" value="{{expense.category}}">
+            <input type="number" name="amount" id="amount" value="{{expense.amount}}">
+            <input type="datetime-local" name="date_created" id="date_created" value="{{expense.date_created}}">
+            <input type="submit" value="Update Expense">
+        </form>
+    </div>
+{% endblock %}
